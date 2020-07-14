@@ -11,7 +11,10 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "logger": "0.0.1",
+    "mongoose": "^5.9.24",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
