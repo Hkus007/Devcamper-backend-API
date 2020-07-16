@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const logger = require('./middleware/logger');
 const morgan = require('morgan');
+const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 // Router files
 const bootcamps = require('./routes/bootcamps');
@@ -24,6 +25,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(logger);
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
+app.use(errorHandler);
 
 app.get('/', (req, res) => {
   res.send('Hello from express');
