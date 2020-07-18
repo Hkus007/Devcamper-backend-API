@@ -29,7 +29,7 @@ const coures = JSON.parse(
 const importData = async () => {
   try {
     await Bootcamp.create(bootcamps);
-    // await Course.create(coures);
+    await Course.create(coures);
     console.log('Data Imported....');
   } catch (err) {
     console.log(err);
@@ -39,7 +39,7 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Bootcamp.deleteMany();
-    // await Course.deleteMany();
+    await Course.deleteMany();
     console.log('Data Deleted....');
   } catch (err) {
     console.log(err);

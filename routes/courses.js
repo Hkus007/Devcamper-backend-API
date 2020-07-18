@@ -9,7 +9,17 @@ const {
   deleteCourse,
 } = require('../controllers/courses');
 
-router.get('/', getCourses);
+const Course = require('../models/Coures');
+const advancedResults = require('../middleware/advancedResults');
+
+router.get(
+  '/',
+  advancedResults(Course, {
+    path: 'bootcamp',
+    select: 'name description',
+  }),
+  getCourses
+);
 router.get('/:id', getCourse);
 router.post('/', addCourse);
 router.put('/:id', updateCourse);
